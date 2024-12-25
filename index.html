@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片叠加工具</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- 标题区域 -->
+        <header class="header">
+            <h1>图片叠加工具</h1>
+            <p class="subtitle">上传图片，创建完美合成</p>
+        </header>
+
+        <!-- 图片上传和预览区域 -->
+        <main class="main-content">
+            <div class="upload-section">
+                <div class="upload-card">
+                    <div class="upload-area" id="baseImageUpload">
+                        <input type="file" id="baseImage" accept="image/png,image/jpeg" multiple hidden>
+                        <label for="baseImage">
+                            <span class="upload-icon">+</span>
+                            <span>上传底图（支持多选）</span>
+                        </label>
+                    </div>
+                    <div class="preview-box">
+                        <h3>底图预览</h3>
+                        <div class="base-images-list" id="baseImagesList">
+                            <div class="preview-image" id="basePreview"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="upload-card">
+                    <div class="upload-area" id="overlayImageUpload">
+                        <input type="file" id="overlayImage" accept="image/png,image/jpeg" multiple hidden>
+                        <label for="overlayImage">
+                            <span class="upload-icon">+</span>
+                            <span>上传素材图（支持多选）</span>
+                        </label>
+                    </div>
+                    <div class="preview-box">
+                        <h3>素材图预览</h3>
+                        <div class="overlay-images-list" id="overlayImagesList">
+                            <!-- 素材图预览列表 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <div class="preview-container">
+                    <h3>合成预览</h3>
+                    <div class="merged-images-grid" id="mergedImagesGrid"></div>
+                </div>
+                <button id="downloadBtn" class="download-button" disabled>下载全部合成图片</button>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
